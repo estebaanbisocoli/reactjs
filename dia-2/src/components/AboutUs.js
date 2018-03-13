@@ -58,17 +58,17 @@ const we = [
  la Casa Blanca al presidente John F. Kennedy.`
   },
  ];
-const AboutUs = (props) => {
+const AboutUs = ({match}) => {
   return (
     <div>
-      <Header as='h2' textAlign='center'>
+      <Header as='h1' textAlign='center'>
         Acerca de Nosotros
       </Header>
       <p>Dessert sesame snaps cupcake. Pie chocolate bar tiramisu jelly beans. Lemon drops powder wafer topping wafer cake tiramisu chocolate cake topping. Muffin donut cake fruitcake chupa chups danish lemon drops soufflé. Candy macaroon cheesecake. Icing icing gummi bears pastry danish pudding halvah cookie. Marzipan liquorice liquorice marzipan cheesecake sweet roll jelly. Jelly bonbon croissant pie jelly beans dragée wafer croissant. Sweet lemon drops chocolate cake tart croissant dragée soufflé marshmallow cake. Chocolate danish brownie cupcake jelly-o jelly beans icing gummies. Jelly beans wafer macaroon soufflé candy carrot cake. Danish cupcake apple pie gingerbread chocolate cake pastry croissant. Dragée candy canes muffin bear claw gingerbread candy ice cream cupcake.</p>
       <List>
         {we.map(person => (
           <List.Item key={person.id}>
-            <Link to={`${props.match.path}/${person.id}`}>{person.name}</Link>
+            <Link to={`${match.path}/${person.id}`}>{person.name}</Link>
           </List.Item>
         ))}
       </List>

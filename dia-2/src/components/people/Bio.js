@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Header} from 'semantic-ui-react'
+import {Header} from 'semantic-ui-react';
+import { Redirect } from 'react-router-dom'
 const we = [
   {
   id: `tony`,
@@ -56,36 +57,25 @@ const we = [
  la Casa Blanca al presidente John F. Kennedy.`
   },
  ];
-class Bio extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      name: '',
-      description: ''
-    }
-  }
-  componentWillMount() {
-    let id = this.props.match.params.id
-    if (this.props.match.params.id) {
-      let currentElement = we.find((element => {
-        return element.id === id
+const Bio = ({match}) => {
+    let id = match.params.id
+    if (match.params.id) {
+      var currentElement = we.find((element => {
+        return element.id == id
       }))
       if (currentElement) {
-        this.setState({
-          name: currentElement.name,
-          description: currentElement.description
-        })
+        return (
+          <div>
+            <h1>{currentElement.name}</h1>
+            <p>{currentElement.description}</p>
+          </div>
+        )
+      } else {
+        return <Redirect to='/about' />
       }
     }
+
   }
-  render() {
-    return (
-      <div>
-      <h1>{this.state.name}</h1>
-      <p>{this.state.description}</p>
-      </div>
-    );
-  }
-}
+
 
 export default Bio;

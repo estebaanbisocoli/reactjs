@@ -8,10 +8,10 @@ const MenuLink = styled(NavLink)`
 `
 const MainNav = () => {
   return (
-    <Menu>
+    <Menu style={{marginBottom : '20px'}}>
       <Menu.Item header>React Router</Menu.Item>
       <Menu.Item>
-        <MenuLink activeStyle={{fontWeight: '900'}} exact to='/'>Home</MenuLink>
+        <MenuLink activeStyle={{fontWeight: 'bold'}} exact to='/'>Home</MenuLink>
       </Menu.Item>
       <Menu.Item>
         <MenuLink activeStyle={{fontWeight: 'bold'}} to='/about'>About</MenuLink>
