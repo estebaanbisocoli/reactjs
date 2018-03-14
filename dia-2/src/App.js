@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <MainNav style={{marginBottom : '200px'}}/>
+        <MainNav cd/>
         <Contenido />
       </div>
     );
